@@ -1,0 +1,27 @@
+{
+  "team_number": "T0098",
+  "group_lead": {
+    "name": "Nagendra jind",
+    "enrollment_no": "2501010290",
+    "github": "https://github.com/JindNagendraa"
+  },
+  "members": [
+    {
+      "name": "Manas katiyar",
+      "enrollment_no": "2501010709",
+      "github": "https://github.com/manaskatiyar14"
+    },
+    {
+      "name": "Tejash Batham",
+      "enrollment_no": "2501010659",
+      "github": "https://github.com/bathamtejash"
+    },
+    {
+      "name": "jay chaudhary",
+      "enrollment_no": "2501010204",
+      "github": "https://github.com/jayownsfire"
+    }
+  ],
+  "postgres_version": "18.4",
+  "laptop_used_for_benchmarks": "Macbook Pro M4"
+}
