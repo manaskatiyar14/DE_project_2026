@@ -27,7 +27,7 @@
 | Member 3  | Tejash Batham |2501010659  |bathamtejash |
 | Member 4  |Jay Chaudhary  |2501010204  |jayownsfire |
 
-**Team No.:** _T0098___ · **Section:** _E___ · **Repository URL:** _https://github.com/manaskatiyar14/DE_project_2026.git___
+**Team No.:** _T0098___ · **Section:** _E_ · **Repository URL:** _https://github.com/manaskatiyar14/DE_project_2026.git___
 
 ---
 
