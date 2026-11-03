@@ -22,10 +22,10 @@
 
 | Role | Name | Enrollment No. | GitHub Username |
 |------|------|----------------|-----------------|
-| Group Lead | | | |
-| Member 2 | | | |
-| Member 3 | | | |
-| Member 4 | | | |
+| Group Lead| nagendra jind |2501010290  |JindNagendraa | 
+| Member 2  | manas katiyar |2501010709  |manaskatiyar14 |
+| Member 3  | Tejash Batham |2501010659  |bathamtejash |
+| Member 4  |Jay Chaudhary  |2501010204  |jayownsfire |
 
 **Team No.:** ____ · **Section:** ____ · **Repository URL:** ____
 
