@@ -1,0 +1,48 @@
+=== R05 run 1 ===
+GroupAggregate  (cost=2227.85..2227.90 rows=2 width=22) (actual time=1.161..1.162 rows=3.00 loops=1)
+  Group Key: status
+  Buffers: shared hit=344
+  ->  Sort  (cost=2227.85..2227.86 rows=3 width=10) (actual time=1.156..1.157 rows=9.00 loops=1)
+        Sort Key: status
+        Sort Method: quicksort  Memory: 25kB
+        Buffers: shared hit=344
+        ->  Index Scan using listings_listing_id_seller_id_key on listings  (cost=0.29..2227.83 rows=3 width=10) (actual time=0.019..1.141 rows=9.00 loops=1)
+              Index Cond: (seller_id = 1042)
+              Index Searches: 1
+              Buffers: shared hit=341
+Planning:
+  Buffers: shared hit=134
+Planning Time: 0.202 ms
+Execution Time: 1.189 ms
+=== R05 run 2 ===
+GroupAggregate  (cost=2227.85..2227.90 rows=2 width=22) (actual time=1.156..1.158 rows=3.00 loops=1)
+  Group Key: status
+  Buffers: shared hit=344
+  ->  Sort  (cost=2227.85..2227.86 rows=3 width=10) (actual time=1.152..1.152 rows=9.00 loops=1)
+        Sort Key: status
+        Sort Method: quicksort  Memory: 25kB
+        Buffers: shared hit=344
+        ->  Index Scan using listings_listing_id_seller_id_key on listings  (cost=0.29..2227.83 rows=3 width=10) (actual time=0.019..1.138 rows=9.00 loops=1)
+              Index Cond: (seller_id = 1042)
+              Index Searches: 1
+              Buffers: shared hit=341
+Planning:
+  Buffers: shared hit=134
+Planning Time: 0.187 ms
+Execution Time: 1.183 ms
+=== R05 run 3 ===
+GroupAggregate  (cost=2227.85..2227.90 rows=2 width=22) (actual time=1.152..1.153 rows=3.00 loops=1)
+  Group Key: status
+  Buffers: shared hit=344
+  ->  Sort  (cost=2227.85..2227.86 rows=3 width=10) (actual time=1.148..1.148 rows=9.00 loops=1)
+        Sort Key: status
+        Sort Method: quicksort  Memory: 25kB
+        Buffers: shared hit=344
+        ->  Index Scan using listings_listing_id_seller_id_key on listings  (cost=0.29..2227.83 rows=3 width=10) (actual time=0.020..1.135 rows=9.00 loops=1)
+              Index Cond: (seller_id = 1042)
+              Index Searches: 1
+              Buffers: shared hit=341
+Planning:
+  Buffers: shared hit=134
+Planning Time: 0.184 ms
+Execution Time: 1.179 ms

@@ -1,21 +1,26 @@
+
 CREATE SCHEMA IF NOT EXISTS olx;
 SET search_path TO olx;
+
 CREATE TABLE cities (
     city_id INTEGER PRIMARY KEY,
     city_name VARCHAR(100) NOT NULL,
     state VARCHAR(100) NOT NULL
 );
+
 CREATE TABLE categories (
     category_id INTEGER PRIMARY KEY,
     category_name VARCHAR(100) NOT NULL,
     parent_id INTEGER REFERENCES categories(category_id)
 );
+
 CREATE TABLE boost_packages (
     package_id INTEGER PRIMARY KEY,
     package_name VARCHAR(100) NOT NULL UNIQUE,
     price NUMERIC(10,2) NOT NULL CHECK (price >= 0),
     duration_days INTEGER NOT NULL CHECK (duration_days > 0)
 );
+
 CREATE TABLE users (
     user_id INTEGER PRIMARY KEY,
     full_name VARCHAR(150) NOT NULL,
@@ -34,7 +39,7 @@ CREATE TABLE listings (
     title VARCHAR(255) NOT NULL,
     description TEXT,
     price NUMERIC(12,2) NOT NULL CHECK (price > 0),
-    is_negotiable BOOLEAN NOT NULL,
+    is_negotiable BOOLEAN NOT NULL DEFAULT FALSE,
     item_condition VARCHAR(20) NOT NULL,
     attributes JSONB NOT NULL,
     city_id INTEGER NOT NULL REFERENCES cities(city_id),
@@ -42,7 +47,7 @@ CREATE TABLE listings (
     latitude NUMERIC(9,6),
     longitude NUMERIC(9,6),
     image_count INTEGER NOT NULL CHECK (image_count >= 0),
-    view_count INTEGER NOT NULL CHECK (view_count >= 0),
+    view_count INTEGER NOT NULL DEFAULT 0 CHECK (view_count >= 0),
     boost_package_id INTEGER REFERENCES boost_packages(package_id),
     status VARCHAR(20) NOT NULL,
     posted_at TIMESTAMPTZ NOT NULL,
@@ -79,7 +84,7 @@ CREATE TABLE chat_messages (
     sender_id INTEGER NOT NULL REFERENCES users(user_id),
     body TEXT NOT NULL,
     sent_at TIMESTAMPTZ NOT NULL,
-    is_read BOOLEAN NOT NULL
+    is_read BOOLEAN NOT NULL DEFAULT FALSE
 );
 
 CREATE TABLE offers (

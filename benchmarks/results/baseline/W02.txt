@@ -1,0 +1,69 @@
+=== W02 run 1 ===
+Update on listings  (cost=2228.14..2236.16 rows=0 width=0) (actual time=1.518..1.519 rows=0.00 loops=1)
+  Buffers: shared hit=408 read=2 dirtied=4
+  InitPlan 2
+    ->  Result  (cost=2227.84..2227.85 rows=1 width=4) (actual time=1.148..1.149 rows=1.00 loops=1)
+          Buffers: shared hit=331
+          InitPlan 1
+            ->  Limit  (cost=0.29..2227.84 rows=1 width=4) (actual time=1.148..1.148 rows=1.00 loops=1)
+                  Buffers: shared hit=331
+                  ->  Index Scan using listings_listing_id_seller_id_key on listings listings_1  (cost=0.29..2227.84 rows=1 width=4) (actual time=1.148..1.148 rows=1.00 loops=1)
+                        Index Cond: (seller_id = 1042)
+                        Filter: ((status)::text = 'ACTIVE'::text)
+                        Rows Removed by Filter: 8
+                        Index Searches: 1
+                        Buffers: shared hit=331
+  ->  Index Scan using listings_listing_id_seller_id_key on listings  (cost=0.29..8.31 rows=1 width=72) (actual time=1.153..1.153 rows=1.00 loops=1)
+        Index Cond: (listing_id = (InitPlan 2).col1)
+        Index Searches: 1
+        Buffers: shared hit=334
+Planning:
+  Buffers: shared hit=103
+Planning Time: 0.225 ms
+Execution Time: 2.058 ms
+=== W02 run 2 ===
+Update on listings  (cost=2228.14..2236.16 rows=0 width=0) (actual time=1.411..1.411 rows=0.00 loops=1)
+  Buffers: shared hit=414 dirtied=1
+  InitPlan 2
+    ->  Result  (cost=2227.84..2227.85 rows=1 width=4) (actual time=1.227..1.227 rows=1.00 loops=1)
+          Buffers: shared hit=332
+          InitPlan 1
+            ->  Limit  (cost=0.29..2227.84 rows=1 width=4) (actual time=1.225..1.225 rows=1.00 loops=1)
+                  Buffers: shared hit=332
+                  ->  Index Scan using listings_listing_id_seller_id_key on listings listings_1  (cost=0.29..2227.84 rows=1 width=4) (actual time=1.225..1.225 rows=1.00 loops=1)
+                        Index Cond: (seller_id = 1042)
+                        Filter: ((status)::text = 'ACTIVE'::text)
+                        Rows Removed by Filter: 8
+                        Index Searches: 1
+                        Buffers: shared hit=332
+  ->  Index Scan using listings_listing_id_seller_id_key on listings  (cost=0.29..8.31 rows=1 width=72) (actual time=1.232..1.232 rows=1.00 loops=1)
+        Index Cond: (listing_id = (InitPlan 2).col1)
+        Index Searches: 1
+        Buffers: shared hit=337
+Planning:
+  Buffers: shared hit=103
+Planning Time: 0.226 ms
+Execution Time: 1.460 ms
+=== W02 run 3 ===
+Update on listings  (cost=2228.14..2236.16 rows=0 width=0) (actual time=1.375..1.375 rows=0.00 loops=1)
+  Buffers: shared hit=414 dirtied=1
+  InitPlan 2
+    ->  Result  (cost=2227.84..2227.85 rows=1 width=4) (actual time=1.201..1.201 rows=1.00 loops=1)
+          Buffers: shared hit=332
+          InitPlan 1
+            ->  Limit  (cost=0.29..2227.84 rows=1 width=4) (actual time=1.199..1.199 rows=1.00 loops=1)
+                  Buffers: shared hit=332
+                  ->  Index Scan using listings_listing_id_seller_id_key on listings listings_1  (cost=0.29..2227.84 rows=1 width=4) (actual time=1.199..1.199 rows=1.00 loops=1)
+                        Index Cond: (seller_id = 1042)
+                        Filter: ((status)::text = 'ACTIVE'::text)
+                        Rows Removed by Filter: 8
+                        Index Searches: 1
+                        Buffers: shared hit=332
+  ->  Index Scan using listings_listing_id_seller_id_key on listings  (cost=0.29..8.31 rows=1 width=72) (actual time=1.205..1.206 rows=1.00 loops=1)
+        Index Cond: (listing_id = (InitPlan 2).col1)
+        Index Searches: 1
+        Buffers: shared hit=337
+Planning:
+  Buffers: shared hit=103
+Planning Time: 0.210 ms
+Execution Time: 1.419 ms
