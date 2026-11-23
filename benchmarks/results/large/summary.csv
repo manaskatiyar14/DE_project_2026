@@ -1,0 +1,4 @@
+query_id,type,avg_ms,median_ms,min_ms,max_ms,scan_nodes
+R06,READ,289.102,283.167,279.740,304.400,Seq Scan on listings | Seq Scan on chat_threads | Index Scan using idx_chat_messages_thread_sent on chat_messages
+R13,READ,0.745,0.355,0.305,1.574,Seq Scan on boost_packages | Index Only Scan using idx_listings_boost_package on listings
+R19,READ,1018.856,1013.511,998.207,1044.850,Seq Scan on chat_threads | Index Only Scan using idx_chat_messages_thread_sent on chat_messages | Seq Scan on listings
